@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laila's Archive</title>
+<meta name="description" content="Portfolios by Faradisha Lailatul Azaria Azhar (Laila): TikTok Go campaigns, writing, and more on the way.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Pinyon+Script&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400&display=swap">
+<style>
+/* Layout: a box of pink cardstock dividers seen from the front. The cover is
+   the front-most sheet; each portfolio is a divider further back, showing its
+   edge, a tab with a sticker label, and a strip of what is inside.
+   One deliberate look (pink stationery), so no dark variant. */
+:root {
+  --blush: #f4e2e5;        /* desk / page */
+  --card: #efc8cf;         /* divider cardstock */
+  --card-lit: #f6d8dd;     /* lit edge of the card */
+  --card-shade: #dfaab5;   /* fold shadow */
+  --ink: #3a2128;          /* plum-brown type */
+  --ink-soft: #7d5a62;
+  --sticker: #fffaf7;
+  --night: #241a1d;        /* the one dark sheet */
+  --pink: #c93f78;         /* links, status */
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --script: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
+  --sans: "DM Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--blush); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+h2 { text-wrap: balance; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap { max-width: 1280px; margin-inline: auto; padding-inline: clamp(16px, 3vw, 40px); }
+
+/* ---------- top line ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px 18px; }
+.top p { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.top-actions { display: flex; align-items: center; gap: 10px; flex: none; }
+.cv-btn {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 18px;
+  border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none;
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .1em; font-weight: 500;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 22%, transparent), 0 6px 14px -10px rgba(80, 30, 42, .6);
+  transition: background .15s, transform .15s;
+}
+.cv-btn:hover { background: var(--card-shade); transform: translateY(-1px); }
+.lang { display: inline-flex; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang button { border: 0; background: none; font: inherit; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-soft); min-height: 32px; min-width: 42px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--sticker); }
+
+/* ---------- cardstock texture ---------- */
+.stock {
+  background-color: var(--card);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .16) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, var(--card-lit), var(--card) 40%, var(--card) 85%, var(--card-shade));
+}
+
+/* ---------- the stage ---------- */
+.stage {
+  display: flex; height: clamp(560px, 78vh, 820px);
+  border-radius: 4px; overflow: hidden; position: relative;
+  box-shadow: 0 50px 90px -40px rgba(80, 30, 42, .55), 0 0 0 1px rgba(80, 30, 42, .08);
+  background: var(--card-shade);
+}
+.cover { position: relative; z-index: 20; flex: 0 0 clamp(260px, 29%, 390px); padding: 26px 0 30px 28px; box-shadow: 14px 0 28px -10px rgba(80, 30, 42, .45); }
+.mark { font-family: var(--display); font-style: italic; font-size: 26px; letter-spacing: -.01em; line-height: 1; }
+.title {
+  position: absolute; left: 14px; bottom: 26px;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-weight: 400; line-height: .9; white-space: nowrap;
+}
+.title .t1 { display: block; font-family: var(--display); font-size: calc(clamp(54px, 8.4vh, 94px) * var(--ts, 1)); letter-spacing: -.02em; }
+.title .t2 { display: block; font-family: var(--script); font-size: calc(clamp(70px, 11vh, 126px) * var(--ts, 1)); padding-inline-start: .95em; margin-left: -.1em; line-height: 1.05; }
+.profile { position: absolute; left: 28px; right: 26px; top: 62px; margin: 0; display: flex; flex-direction: column; gap: 8px; max-width: 340px; font-size: 12px; line-height: 1.36; }
+.profile dt { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1px; }
+.profile dd { margin: 0; }
+.profile .kw { font-weight: 500; }
+.profile .is-folded { display: none; }
+.cover .years { position: absolute; right: 18px; bottom: 26px; writing-mode: vertical-rl; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* tab + sticker (shared by cover and dividers) */
+.tab { position: absolute; width: 54px; height: 286px; filter: drop-shadow(5px 4px 6px rgba(80, 30, 42, .28)); pointer-events: none; }
+.tab svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.tab svg path { fill: var(--card); }
+.tab .tab-h { display: none; }
+.sticker {
+  position: absolute; left: 21px; top: 40px;
+  writing-mode: vertical-rl;
+  background: var(--sticker); color: var(--ink);
+  padding: 12px 5px; font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; line-height: 1.15; white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(80, 30, 42, .25);
+}
+.cover .tab { right: -40px; top: 5%; }
+
+/* dividers */
+.file {
+  --i: 0;
+  position: relative; z-index: calc(15 - var(--i));
+  flex: 1 1 0; min-width: 0;
+  display: block; text-decoration: none; color: var(--ink);
+  transition: flex-grow .55s cubic-bezier(.2, .7, .2, 1);
+}
+.file .shot { position: absolute; inset: 0; background: var(--grad, var(--card)); }
+.file .edge { position: absolute; top: 0; bottom: 0; left: 0; width: 24px; box-shadow: 9px 0 16px -6px rgba(80, 30, 42, .42); }
+.file .tab { left: 22px; top: var(--tab-top, 12%); }
+.file .info {
+  position: absolute; left: 32px; right: 8px; bottom: 16px;
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
+}
+.pill { display: inline-flex; align-items: center; gap: 6px; background: var(--sticker); color: var(--ink); border-radius: 999px; padding: 6px 11px; font-size: 12px; font-weight: 600; box-shadow: 0 6px 16px -8px rgba(40, 10, 20, .5); white-space: nowrap; }
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); }
+.file .more { background: var(--sticker); border-radius: 12px; padding: 10px 12px; font-size: 13px; line-height: 1.35; max-width: 260px; box-shadow: 0 10px 22px -12px rgba(40, 10, 20, .55); opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; }
+.file .more b { display: block; font-family: var(--display); font-weight: 400; font-size: 19px; line-height: 1.1; margin-bottom: 2px; }
+.file:hover, .file:focus-visible { flex-grow: 2.3; }
+.file:hover .more, .file:focus-visible .more { opacity: 1; transform: none; }
+.file:focus-visible { outline-offset: -6px; }
+
+/* coming soon sheets */
+.file.is-soon { cursor: default; }
+.file.is-soon .pill .dot { background: var(--ink-soft); }
+
+/* ---------- index ---------- */
+.index { padding-block: 56px 20px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px 56px; align-items: start; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.index h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.02; letter-spacing: -.015em; margin-top: 10px; }
+.index h2 em { font-family: var(--script); font-style: normal; font-size: 1.25em; color: var(--pink); }
+.index .lead { margin-top: 16px; color: var(--ink-soft); max-width: 44ch; }
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+.row { border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+.row > a, .row > div { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 4px 18px; align-items: center; padding: 18px 4px; text-decoration: none; color: inherit; }
+.row > a:hover { background: color-mix(in srgb, var(--card) 45%, transparent); }
+.row .thumb { width: 54px; height: 54px; border-radius: 6px; background: var(--grad, var(--card)); grid-row: span 2; box-shadow: inset 0 0 0 1px rgba(80, 30, 42, .08); }
+.row h3 { font-family: var(--display); font-weight: 400; font-size: 23px; line-height: 1.15; }
+.row p { color: var(--ink-soft); font-size: 14.5px; grid-column: 2; }
+.row .state { grid-row: 1 / span 2; grid-column: 3; font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.row .state.st-live { color: var(--pink); }
+
+/* ---------- footer ---------- */
+.foot { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; justify-content: space-between; padding-block: 34px 40px; font-size: 14px; color: var(--ink-soft); }
+.foot .who { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink); }
+.foot .links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.foot .links span { user-select: all; }
+
+/* ---------- phones: the box tips forward, dividers stack top to bottom ---------- */
+@media (max-width: 760px) {
+  .stage { flex-direction: column; height: auto; overflow: visible; border-radius: 4px; }
+  .cover { flex: none; padding: 20px 20px 26px; box-shadow: 0 14px 26px -10px rgba(80, 30, 42, .45); }
+  .cover .tab { display: none; }
+  .title { position: static; writing-mode: horizontal-tb; transform: none; margin-top: 26px; white-space: normal; }
+  .title .t1 { font-size: clamp(50px, 15vw, 72px); }
+  .title .t2 { font-size: clamp(72px, 22vw, 104px); padding-inline-start: .7em; margin: -.3em 0 0; }
+  .cover .years { position: static; writing-mode: horizontal-tb; display: block; margin-top: 10px; }
+  .cover { display: flex; flex-direction: column; }
+  .cover .years { order: 3; }
+  .profile { order: 4; position: static; max-width: none; margin-top: 18px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); font-size: 13.5px; gap: 11px; }
+  .file { flex: none; height: 178px; z-index: calc(1 + var(--i)); transition: none; }
+  .file:hover, .file:focus-visible { flex-grow: 0; }
+  .file .edge { left: 0; right: 0; bottom: auto; width: auto; height: 22px; box-shadow: 0 9px 16px -6px rgba(80, 30, 42, .42); }
+  .file { overflow: hidden; }
+  .file .tab { width: 262px; height: 50px; left: clamp(6px, var(--tab-left, 16px), calc(100% - 268px)); top: 20px; }
+  .tab .tab-v { display: none; }
+  .tab .tab-h { display: block; }
+  .sticker { writing-mode: horizontal-tb; left: 24px; top: 13px; padding: 4px 10px; }
+  .file .info { left: 14px; right: 14px; bottom: 12px; flex-direction: row; align-items: flex-end; justify-content: space-between; }
+  .file .more { display: none; }
+  .index { grid-template-columns: minmax(0, 1fr); padding-block: 42px 10px; }
+  .row > a, .row > div { grid-template-columns: 46px minmax(0, 1fr); }
+  .row .thumb { width: 46px; height: 46px; grid-row: span 3; }
+  .row .state { grid-row: auto; grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .file, .file .more { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p id="who-top">Faradisha Lailatul Azaria Azhar</p>
+    <div class="top-actions">
+      <a class="cv-btn" id="cv-btn" href="cv/CV_Faradisha_Azhar.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span><span class="sr"> (PDF, opens in a new tab)</span></a>
+      <div class="lang" role="group" aria-label="Language / Bahasa">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="id" aria-pressed="false" lang="id">ID</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stage" id="stage" aria-label="Portfolios">
+      <div class="cover stock">
+        <span class="mark">this is…</span>
+        <dl class="profile" id="profile">
+          <div><dt data-k="eduT">Education</dt><dd data-k="edu">Digital Journalism, Universitas Multimedia Nusantara · 2024</dd></div>
+          <div class="p-about"><dt data-k="aboutT">About</dt><dd data-k="about"></dd></div>
+          <div><dt data-k="rolesT">Roles</dt><dd class="kw" data-k="roles"></dd></div>
+          <div class="p-fields"><dt data-k="fieldsT">Fields</dt><dd data-k="fields"></dd></div>
+        </dl>
+        <span class="tab" aria-hidden="true">
+          <svg class="tab-v" viewBox="0 0 54 250" preserveAspectRatio="none"><path d="M0 0C0 10 4 14 14 14H40Q54 14 54 28V222Q54 236 40 236H14C4 236 0 240 0 250Z"/></svg>
+          <span class="sticker" id="cover-sticker">portfolio index</span>
+        </span>
+        <h1 class="title"><span class="t1">Laila’s</span> <span class="t2">Archive</span></h1>
+        <span class="years">2022 — now</span>
+      </div>
+      <!-- dividers are added by the script below from the ARCHIVE list -->
+    </section>
+
+    <section class="index" aria-labelledby="h-index">
+      <div>
+        <span class="eyebrow" id="idx-eyebrow">The archive</span>
+        <h2 id="h-index">Everything, <em>filed.</em></h2>
+        <p class="lead" id="idx-lead"></p>
+      </div>
+      <ul class="list" id="list"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="who">Faradisha Lailatul Azaria Azhar</span>
+    <span class="links">
+      <span>faradishaazhar@gmail.com</span>
+      <a href="https://www.linkedin.com/in/faradisha" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </span>
+  </footer>
+</div>
+
+<script>
+/* ==========================================================================
+   THE ARCHIVE. Add a portfolio here; the page rebuilds itself.
+   status: 'live' (opens href) or 'soon' (shows "coming soon").
+   title: also printed on the tab sticker. grad: the divider's colour.
+   ========================================================================== */
+var ARCHIVE = [
+  { status: 'live', href: 'campaign/index.html',
+    grad: 'linear-gradient(170deg, #fbe3ea 0%, #f2a9c0 55%, #e27a9e 100%)',
+    title: { en: 'Campaign Portfolio', id: 'Campaign Portfolio' },
+    desc: { en: '52 TikTok Go Dining campaigns for 17 F&B brands, February to August 2026: results, brands, case studies and every number.', id: '52 campaign TikTok Go Dining untuk 17 brand F&B, Februari sampai Agustus 2026: hasil, brand, studi kasus, dan semua angkanya.' } },
+  { status: 'live', href: 'writing/index.html',
+    grad: 'linear-gradient(170deg, #fdeee6 0%, #f3c2b0 55%, #e0917f 100%)',
+    title: { en: 'Writing Portfolio', id: 'Writing Portfolio' },
+    desc: { en: '17 selected works from 2022 to 2025: journalism, essays, scripts, copywriting and fiction.', id: '17 karya pilihan dari 2022 sampai 2025: jurnalistik, esai, naskah, copywriting, dan fiksi.' } },
+  { status: 'soon',
+    grad: 'linear-gradient(170deg, #f7e2f0 0%, #e2a9d2 55%, #c779b3 100%)',
+    title: { en: 'Content Creating Portfolio', id: 'Content Creating Portfolio' },
+    desc: { en: 'Videos and social content I create.', id: 'Video dan konten media sosial yang aku buat.' } },
+  { status: 'soon',
+    grad: 'linear-gradient(170deg, #efe6f6 0%, #c9b6e3 55%, #9d86c9 100%)',
+    title: { en: 'Design Portfolio', id: 'Design Portfolio' },
+    desc: { en: 'Posters, social posts and visual design.', id: 'Poster, post media sosial, dan desain visual.' } },
+  { status: 'soon',
+    grad: 'linear-gradient(170deg, #f6e7e1 0%, #d9b1a6 55%, #b7877c 100%)',
+    title: { en: 'Freelance Portfolio', id: 'Freelance Portfolio' },
+    desc: { en: 'Freelance projects for brands and clients.', id: 'Proyek freelance untuk brand dan klien.' } },
+  { status: 'soon',
+    grad: 'linear-gradient(170deg, #6b3a4a 0%, #3a2128 55%, #1d1215 100%)',
+    title: { en: 'Event Portfolio', id: 'Event Portfolio' },
+    desc: { en: 'Events I have planned and run, from the first idea to the day itself.', id: 'Acara yang aku rencanakan dan jalankan, dari ide awal sampai hari-H.' } }
+];
+
+var T = {
+  en: { sticker: 'portfolio index', eyebrow: 'The archive', h: 'Everything, <em>filed.</em>',
+        lead: 'Portfolios by Faradisha Lailatul Azaria Azhar (Laila), across creator campaigns, writing and content. Open a folder to step inside. The rest are still being filed.',
+        open: 'Open', soon: 'Coming soon', soonShort: 'Coming soon', live: 'Open →', state: { live: 'Open', soon: 'Coming soon' }, years: '2022 — now',
+        profile: { eduT: 'Education', edu: 'Digital Journalism, Universitas Multimedia Nusantara · 2024',
+                   aboutT: 'About', about: 'I run creator campaigns end to end, write across formats, and build programs that help creators grow.',
+                   rolesT: 'Roles', roles: 'Journalist · Editor · Content Writer · Copywriter · Scriptwriter · Public Relations · Communications Officer · Social Media Specialist · Content Creator · Campaign Manager · KOL & Creator Manager · Influencer & Digital Marketing · Community Manager · Program & Event Coordinator',
+                   fieldsT: 'Fields', fields: 'Media & publishing · Creative & marketing agencies · Brands & F&B · EdTech · NGOs & public sector' } },
+  id: { sticker: 'indeks portofolio', eyebrow: 'Arsip', h: 'Semuanya, <em>tersimpan.</em>',
+        lead: 'Kumpulan portofolio Faradisha Lailatul Azaria Azhar (Laila), dari campaign creator, tulisan, sampai konten. Buka folder untuk melihat isinya. Sisanya masih dirapikan.',
+        open: 'Buka', soon: 'Segera hadir', soonShort: 'Segera hadir', live: 'Buka →', state: { live: 'Buka', soon: 'Segera hadir' }, years: '2022 — sekarang',
+        profile: { eduT: 'Pendidikan', edu: 'Jurnalistik Digital, Universitas Multimedia Nusantara · 2024',
+                   aboutT: 'Tentang', about: 'Aku menjalankan campaign creator dari awal sampai akhir, menulis lintas format, dan membangun program yang membantu creator bertumbuh.',
+                   rolesT: 'Posisi', roles: 'Journalist · Editor · Content Writer · Copywriter · Scriptwriter · Public Relations · Communications Officer · Social Media Specialist · Content Creator · Campaign Manager · KOL & Creator Manager · Influencer & Digital Marketing · Community Manager · Program & Event Coordinator',
+                   fieldsT: 'Bidang', fields: 'Media & penerbitan · Agensi kreatif & marketing · Brand & F&B · EdTech · NGO & sektor publik' } }
+};
+
+(function () {
+  var lang = 'en';
+  try { var s = localStorage.getItem('archive-lang'); if (s === 'id' || s === 'en') lang = s; } catch (e) { /* ignore */ }
+  var TAB_TOPS = ['31%', '14%', '38%', '11%', '25%', '18%', '34%'];
+  var TAB_LEFTS = ['16px', '74px', '34px', '88px', '52px', '22px', '66px'];
+  var TAB_V = '<svg class="tab-v" viewBox="0 0 54 250" preserveAspectRatio="none"><path d="M0 0C0 10 4 14 14 14H40Q54 14 54 28V222Q54 236 40 236H14C4 236 0 240 0 250Z"/></svg>';
+  var TAB_H = '<svg class="tab-h" viewBox="0 0 230 50" preserveAspectRatio="none"><path d="M0 0C10 0 14 4 14 14V36Q14 50 28 50H202Q216 50 216 36V14C216 4 220 0 230 0Z"/></svg>';
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function tx(o) { return o[lang] || o.en; }
+
+  function render() {
+    var l = T[lang];
+    document.documentElement.lang = lang;
+    document.getElementById('cover-sticker').textContent = l.sticker;
+    document.querySelector('.cover .years').textContent = l.years;
+    Array.prototype.slice.call(document.querySelectorAll('#profile [data-k]')).forEach(function (n) { n.textContent = l.profile[n.getAttribute('data-k')]; });
+    document.getElementById('idx-eyebrow').textContent = l.eyebrow;
+    document.getElementById('h-index').innerHTML = l.h;
+    document.getElementById('idx-lead').textContent = l.lead;
+
+    var stage = document.getElementById('stage');
+    Array.prototype.slice.call(stage.querySelectorAll('.file')).forEach(function (n) { n.remove(); });
+    var html = ARCHIVE.map(function (a, i) {
+      var live = a.status === 'live';
+      var style = '--i:' + i + ';--tab-top:' + TAB_TOPS[i % TAB_TOPS.length] + ';--tab-left:' + TAB_LEFTS[i % TAB_LEFTS.length] + ';--grad:' + a.grad;
+      var shot = '<span class="shot"></span>';
+      var inner = shot +
+        '<span class="edge stock" aria-hidden="true"></span>' +
+        '<span class="tab" aria-hidden="true">' + TAB_V + TAB_H + '<span class="sticker">' + esc(tx(a.title)) + '</span></span>' +
+        '<span class="info"><span class="more"><b>' + esc(tx(a.title)) + '</b>' + esc(tx(a.desc)) + '</span>' +
+        '<span class="pill"><i class="dot" aria-hidden="true"></i>' + esc(live ? l.live : l.soonShort) + '</span></span>';
+      var label = tx(a.title) + ', ' + (live ? l.open : l.soon);
+      return live
+        ? '<a class="file" href="' + esc(a.href) + '" style="' + style + '" aria-label="' + esc(label) + '">' + inner + '</a>'
+        : '<div class="file is-soon' + '" style="' + style + '" role="img" aria-label="' + esc(label) + '">' + inner + '</div>';
+    }).join('');
+    stage.insertAdjacentHTML('beforeend', html);
+
+    document.getElementById('list').innerHTML = ARCHIVE.map(function (a) {
+      var live = a.status === 'live';
+      var thumb = '<span class="thumb" style="--grad:' + a.grad + '" aria-hidden="true"></span>';
+      var body = thumb + '<h3>' + esc(tx(a.title)) + '</h3><p>' + esc(tx(a.desc)) + '</p><span class="state st-' + a.status + '">' + esc(l.state[a.status]) + (live ? ' →' : '') + '</span>';
+      return '<li class="row">' + (live ? '<a href="' + esc(a.href) + '">' + body + '</a>' : '<div>' + body + '</div>') + '</li>';
+    }).join('');
+
+    Array.prototype.slice.call(document.querySelectorAll('[data-lang]')).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+  }
+
+  // Keep the profile clear of the vertical title: fold the optional lines first,
+  // then shrink the title a little. Phones show everything (the cover stacks).
+  function fitCover() {
+    var prof = document.getElementById('profile'), title = document.querySelector('.title'), t2 = document.querySelector('.title .t2');
+    var opt = [prof.querySelector('.p-about'), prof.querySelector('.p-fields')];
+    opt.forEach(function (n) { n.classList.remove('is-folded'); });
+    title.style.setProperty('--ts', '1');
+    if (window.matchMedia('(max-width: 760px)').matches) return;
+    function over() {
+      var r = document.createRange(); r.selectNodeContents(t2);
+      return prof.getBoundingClientRect().bottom + 16 > r.getBoundingClientRect().top;
+    }
+    for (var i = 0; i < opt.length && over(); i++) opt[i].classList.add('is-folded');
+    for (var sc = 1; over() && sc > 0.7; ) { sc = Math.round((sc - 0.05) * 100) / 100; title.style.setProperty('--ts', String(sc)); }
+  }
+  var fitTick = null;
+  window.addEventListener('resize', function () { clearTimeout(fitTick); fitTick = setTimeout(fitCover, 80); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitCover);
+
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-lang]');
+    if (!b) return;
+    lang = b.getAttribute('data-lang');
+    try { localStorage.setItem('archive-lang', lang); } catch (e) { /* ignore */ }
+    render();
+    fitCover();
+  });
+  render();
+  fitCover();
+})();
+</script>
+</body>
+</html>
